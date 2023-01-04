@@ -11,7 +11,7 @@ ur
 cd /usr/share/nginx/html 
 
 unzip /tmp/frontend.zip
-#check check
+
 
 cp files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
 
