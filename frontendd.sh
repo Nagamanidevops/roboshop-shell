@@ -14,7 +14,7 @@ cd /usr/share/nginx/html
 
 unzip /tmp/frontend.zip
 
-
-cp  $(scriptLocation)files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
+echo scriptLocation
+cp $(scriptLocation)files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
 
 systemctl restart nginx 
