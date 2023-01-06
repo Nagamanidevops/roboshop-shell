@@ -6,10 +6,10 @@ yum install nginx -y &>>${LOG}
 
 
 
-rm -rf /usr/share/nginx/html/* &>>${log}
+rm -rf /usr/share/nginx/html/* 
 
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${LOG}
-ur
+
 cd /usr/share/nginx/html &>>${LOG}
 
 unzip /tmp/frontend.zip
