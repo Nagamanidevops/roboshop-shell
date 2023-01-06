@@ -55,12 +55,12 @@ status_check
 
 echo -e "\e[36m system d\e[0m"
 systemctl daemon-reload &>>${LOG}
-status_check()
+status_check
 
 
 echo -e "\e[36m enable catalogue service\e[0m"
 systemctl enable catalogue &>>${LOG}
-status_check()
+status_check
 
 
 echo -e "\e[36m start catalogue\e[0m"
