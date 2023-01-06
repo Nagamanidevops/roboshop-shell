@@ -28,6 +28,7 @@ if [ $? -eq 0 ]; then
 echo success
 else
 echo failed
+echo "refer log file , LOG - ${LOG}"
 exit
 fi
 
