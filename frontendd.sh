@@ -26,6 +26,7 @@ cp ${scriptLocation}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.con
 echo $?
 echo -e "\e[36m ENABLE nginx\e[0m" 
 systemctl enable nginx &>>${LOG}
+echo $?
 
 echo -e "\e[36m start nginx\e[0m"
 
