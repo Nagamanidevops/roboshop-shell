@@ -1,7 +1,7 @@
 scriptLocation=$(pwd)
 LOG=/tmp/roboshop.log
 
-"""status_check(){
+status_check(){
  if [ $? -eq 0 ]; then
   echo -e "\e[32success\e[0m"
  else
@@ -9,7 +9,7 @@ LOG=/tmp/roboshop.log
   echo "refer log file , LOG - ${LOG}"
   exit
  fi
-}"""
+}
 
 echo -e "\e[36m configuring Node js\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
