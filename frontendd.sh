@@ -16,10 +16,11 @@ echo -e "\e[33mextract frontend content \e[0m"
 unzip /tmp/frontend.zip &>>{LOG}
 
 echo $scriptLocation
-echo -e "\e[ 34mcopy nginx roboshop config file\e[0m"
+echo -e "\e[34mcopy nginx roboshop config file\e[0m"
 cp ${scriptLocation}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${LOG}
 
-echo -e "\e[36m start nginx\e[0m" 
+echo -e "\e[36m ENABLE nginx\e[0m" 
 systemctl enable nginx &>>${LOG}
+echo -e "\e[36m start nginx\e[0m"
 
 systemctl restart nginx &>>${LOG}
