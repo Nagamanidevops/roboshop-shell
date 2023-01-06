@@ -1,24 +1,22 @@
 scriptLocation=$(pwd)
 LOG=/tmp/roboshop.log
 
-status_check()
-{
-if [ $? -eq 0 ]; then
-echo -e "\e[32success\e[0m"
-else
-echo -e "\e[31m failed js\e[0m"
-echo "refer log file , LOG - ${LOG}"
-exit
-fi
-
-}
+"""status_check(){
+ if [ $? -eq 0 ]; then
+  echo -e "\e[32success\e[0m"
+ else
+  echo -e "\e[31m failed js\e[0m"
+  echo "refer log file , LOG - ${LOG}"
+  exit
+ fi
+}"""
 
 echo -e "\e[36m configuring Node js\e[0m"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 status_check()
 
 
-echo -e "\e[36m install Node js\e[0m"
+#echo -e "\e[36m install Node js\e[0m"
 yum install nodejs -y &>>${LOG}
 status_check()
 
