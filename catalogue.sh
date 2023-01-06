@@ -11,7 +11,10 @@ yum install nodejs -y &>>${LOG}
 status_check
 
 print_head "add application use"
-useradd roboshop
+id roboshop &>>${LOG}
+if [$? -ne 0] ; then
+useradd roboshop &>>${LOG}
+fi
 
 mkdir -p /app &>>${LOG}
 
