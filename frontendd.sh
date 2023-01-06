@@ -3,8 +3,12 @@ scriptLocation=$(pwd)
 LOG=/tmp/roboshop.log
 echo -e "\e[35m install nginx\e[0m"
 yum install nginx -y &>>${LOG}
-echo $?
 
+if [ $? -eq 0 ]; then
+echo success
+else
+echo failed
+fi
 
 echo -e "\e[31m remove nginx old content\e[0m"
 rm -rf /usr/share/nginx/html/* 
