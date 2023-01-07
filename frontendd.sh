@@ -1,36 +1,41 @@
-#scriptLocation=$(pwd)
 
-#LOG=/tmp/roboshop.log
 source common.sh
 
-echo -e "\e[35m install nginx\e[0m"
+
+print_head "install nginx"
 yum install nginx -y &>>${LOG}
 
 status_check
 
-echo -e "\e[31m remove nginx old content\e[0m"
+
+print_head "remove nginx old content"
 rm -rf /usr/share/nginx/html/* 
 status_check
 
-echo -e "\e[32mdownload frontend content \e[0m"
+
+print_head "download frontend content"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>${LOG}
 status_check
 
 cd /usr/share/nginx/html &>>${LOG}
 
-echo -e "\e[33mextract frontend content \e[0m"
+
+print_head "extract frontend content"
 unzip /tmp/frontend.zip &>>{LOG}
 status_check
 
 echo $scriptLocation
-echo -e "\e[34mcopy nginx roboshop config file\e[0m"
+
+print_head " copy nginx roboshop config file"
 cp ${scriptLocation}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${LOG}
 status_check
-echo -e "\e[36m ENABLE nginx\e[0m" 
+
+print_head "ENABLE nginx"
 systemctl enable nginx &>>${LOG}
 status_check
 
-echo -e "\e[36m start nginx\e[0m"
+
+print_head" start nginx"
 
 systemctl restart nginx &>>${LOG}
 status_check
