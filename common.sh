@@ -68,12 +68,12 @@ systemctl daemon-reload &>>${LOG}
 status_check
 
 
-print_head "enable ${component} servic"
+print_head "enable ${component} service"
 systemctl enable ${component} &>>${LOG}
 status_check
 
 
-print_head"start ${component} servic"
+print_head "start ${component} service"
 systemctl start ${component} &>>${LOG}
 status_check
 
