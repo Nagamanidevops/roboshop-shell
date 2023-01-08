@@ -1,7 +1,8 @@
 scriptLocation=$(pwd)
 LOG=/tmp/roboshop.log
 
-status_check(){
+status_check()
+{
  if [ $? -eq 0 ]; then
   echo -e "\e[1;32m success\e[0m"
  else
@@ -27,7 +28,7 @@ print_head "install Node js"
 yum install nodejs -y &>>${LOG}
 status_check
 
-print_head "add application use"
+print_head "add application user"
 id roboshop &>>${LOG}
 if [$? -ne 0] ; then
 useradd roboshop &>>${LOG}
