@@ -1,7 +1,7 @@
 [Unit]
 Description = User Service
 [Service]
-User=roboshop
+user=roboshop
 Environment=MONGO=true
 Environment=REDIS_HOST=redis-dev.devopsg70.online
 Environment=MONGO_URL="mongodb://mongodb-dev.devopsg70.online:27017/users"
