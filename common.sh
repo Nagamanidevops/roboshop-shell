@@ -23,7 +23,7 @@ NODEJS()
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 status_check
 
-print_head "install Node j"
+print_head "install Node js"
 yum install nodejs -y &>>${LOG}
 status_check
 
