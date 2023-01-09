@@ -11,8 +11,8 @@ dnf module disable mysql -y &>>${LOG}
 status_check
 
 print_head "Copy MySQL Repo file"
-#cp ${script_location}/files/mysql.repo /etc/yum.repos.d/mysql.repo &>>${LOG}
-cp ${script_location}/files/mysql.repo /etc/yum.repos/mysql.repo
+echo $script_location
+cp ${script_location}/files/mysql.repo /etc/yum.repos.d/mysql.repo &>>${LOG}
 status_check
   
  print_head "Install mysql 8.0"
