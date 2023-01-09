@@ -1,4 +1,5 @@
 source common.sh
+scriptLocation=$(pwd)
 
 if [ -z ${root_mysql_password} ]; then
  echo "root_mysql_password is missing"
