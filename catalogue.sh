@@ -1,6 +1,7 @@
 source common.sh
 
-component=
+component=catalogue
 schema_loa=true
+schematype=mongo
 
 NODEJS
