@@ -1,5 +1,4 @@
 source common.sh
-script_location=$(pwd)
 
 if [ -z ${root_mysql_password} ]; then
  echo "root_mysql_password is missing"
@@ -12,10 +11,8 @@ dnf module disable mysql -y &>>${LOG}
 status_check
 
 print_head "Copy MySQL Repo file"
-echo "hi $script_location"
-
-
-cp ${script_location}/files/mysql.repo /etc/yum.repos.d/mysql.repo &>>${LOG}
+cp ${scriptLocation}/files/mysql.repo /etc/yum.repos.d/mysql.repo
+#cp ${scriptLocation}/files/mysql.repo /etc/yum.repos.d/mysql.repo &>>${LOG}
 status_check
   
  print_head "Install mysql 8.0"
