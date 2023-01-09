@@ -15,7 +15,7 @@ cp ${script_location}/files/mysql.repo /etc/yum.repos.d/mysql.repo &>>${LOG}
 status_check
   
  print_head "Install mysql 8.0"
- yum install mysql-community-server -y &>>${LOG}
+ #yum install mysql-community-server -y &>>${LOG}
  status_check
   
   
