@@ -131,7 +131,7 @@ LOAD_SCHEMA
 MAVEN()
 {
  print_head "Install Maven"
- yum install maven -y >>&${LOG}
+ yum install maven -y &>>${LOG}
   status_check
   
   APP_PREREQ
