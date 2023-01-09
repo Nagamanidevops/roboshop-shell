@@ -2,7 +2,7 @@ scriptLocation=$(pwd)
 source common.sh
 
 print_head "copy momgodb repo file"
-cp ${scriptLocation}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
+cp ${scriptLocation}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo 
 status_check
 
 print_head "install MongoDB"
