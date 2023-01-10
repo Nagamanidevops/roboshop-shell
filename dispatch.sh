@@ -20,7 +20,7 @@ print_head "add application user"
   fi
   status_check
   
-mkdir /app 
+mkdir  -p /app 
 curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip 
 cd /app 
 unzip /tmp/dispatch.zip
