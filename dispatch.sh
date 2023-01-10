@@ -12,19 +12,9 @@ print_head "install golang"
 yum install golang -y >>$LOG
 status_check
 
-#APP_PREREQ
-print_head "add application user"
-  id roboshop &>>${LOG}
-  if [ $? -ne 0 ] ; then
-   useradd roboshop &>>${LOG}
-  fi
-  status_check
-  
-mkdir  -p /app 
-curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip 
-cd /app 
-unzip /tmp/dispatch.zip
+APP_PREREQ
 
+  
 cd /app 
 print_head "download dependencies"
 go mod init dispatch >>$LOG
