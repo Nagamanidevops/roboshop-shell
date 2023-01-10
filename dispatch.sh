@@ -9,7 +9,7 @@ fi
 echo  ${roboshop_rabbitmq_password}
 
 print_head "install golang"
-yum install golang -y
+yum install golang -y >>$LOG
 status_check
 
 APP_PREREQ
@@ -21,22 +21,22 @@ go mod init dispatch >>$LOG
 status_check
 
 print_head "go get"
-go get
+go get >>$LOG
 status_check
 
 print_head "build content"
-go build
+go build >>$LOG
 status_check
 
 print_head "reload deamont"
-systemctl daemon-reload
+systemctl daemon-reload >>$LOG
 status_check
 
 print_head "enable golang"
-systemctl enable dispatch 
+systemctl enable dispatch >>$LOG
 status_check
 
 
 print_head "start golang"
-systemctl start dispatch
+systemctl start dispatch >>$LOG
 status_check
