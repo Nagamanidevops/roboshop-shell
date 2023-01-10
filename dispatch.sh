@@ -15,7 +15,7 @@ status_check
 APP_PREREQ
 
 
-cd /app 
+#cd /app 
 print_head "download dependencies"
 go mod init dispatch >>$LOG
 status_check
